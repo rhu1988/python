@@ -1,0 +1,15 @@
+#beta=[alpha,beta_1,beta_2,...,beta_k]
+#x_i=[1,x_i1,...x_ik]
+def predict(x_i,beta):
+    return dot(x_i,beta)
+
+def error(x_i,y_i,beta):
+    return y_i-predict(x_i,beta)
+    
+def squard_error(x_i,y_i,beta):
+    return error(x_i,y_i,beta)**2
+    
+def squard_error_gradient(x_i,y_i,beta):
+    return [-2*x_ij*error(x_i,y_i,beta)
+            for x_ij in x_i]
+            
